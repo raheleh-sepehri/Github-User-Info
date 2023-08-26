@@ -34,15 +34,9 @@ Welcome to the GitHub User Info web application! This application allows you to 
 
 ## Demo
 
-Include screenshots or gifs demonstrating the functionality of your web application here.
+(https://github-user-info-omega.vercel.app/)
 
-## Contributing
 
-If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Follow the code style and guidelines mentioned in the project.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
