@@ -1,6 +1,4 @@
-import TextFields from "../../common/TextFields";
-import MyButton from "../../common/MyButton";
-import GitHubInfo from "../GitHubInfo";
+import { TextFields, MyButton, GitHabInfo } from "..";
 import { useState } from "react";
 import axios from "axios";
 import { UserData, RepoData } from "../../../types/index";
@@ -16,8 +14,6 @@ const GitHabUserInput = ({}) => {
   const fetchData = async () => {
     if (userName === "") {
       toast.error("Please enter a GitHub username.");
-      console.log("empty");
-
       return;
     }
 
@@ -27,26 +23,27 @@ const GitHabUserInput = ({}) => {
       );
 
       setUserData(userResponse.data);
+
       const reposResponse = await axios.get<RepoData[]>(
         userResponse.data.repos_url
       );
       setRepos(reposResponse.data);
-      setUserName("");
+
+      setUserName(""); // Clear input after successful fetch
       setIsOpen(true);
-    } catch (error: any) {
-      if (error.response && error.response.status === 404) {
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response?.status === 404) {
         toast.error("The entered GitHub username does not exist.");
       } else {
-        console.log(error);
+        console.error("Error fetching data:", error);
       }
     }
   };
+
   return (
-    <div className="w-full bg-cyan-50  border-r-2 border-gray-200  flex items-center justify-center md:p-10 lg:p-20 ">
-      <div className="flex h-full shadow-inner w-full px-2 flex-col items-center justify-center gap-y-5 rounded-lg border border-gray-200">
-        <h1 className="font-bold text-xl md:text-2xl mb-12 text-center  ">
-          Give your GitHub username
-        </h1>
+    <div className="left__Side">
+      <div className="github__user">
+        <h1 className="github__user__text">Give your GitHub username</h1>
         <TextFields
           state={userName}
           changeHandler={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,7 +57,7 @@ const GitHabUserInput = ({}) => {
           hoverBg="#4f46e5"
         />
       </div>
-      <GitHubInfo
+      <GitHabInfo
         userData={userData}
         repos={repos}
         isOpen={isOpen}
