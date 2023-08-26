@@ -1,0 +1,11 @@
+.left__Side{
+    @apply w-full bg-cyan-50  border-r-2 border-gray-200  flex items-center justify-center md:p-10 lg:p-20
+}
+
+.github__user{
+    @apply flex h-full shadow-inner w-full px-2 flex-col items-center justify-center gap-y-5 rounded-lg border border-gray-200
+}
+
+.github__user__text{
+    @apply font-bold text-xl md:text-2xl mb-12 text-center 
+}
