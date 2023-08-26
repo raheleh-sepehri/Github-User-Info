@@ -102,5 +102,4 @@ const index = ({ userData, isOpen, repos, setIsOpen }: PropsType) => {
     </>
   );
 };
-
 export default index;

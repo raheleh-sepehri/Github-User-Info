@@ -12,12 +12,6 @@
   font-family: "Manrope", sans-serif;
 }
 
-
-
-
-
-
-
 body {
   background-color: #f1f5f9;
   width: 100%;
@@ -27,8 +21,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
-
 
 button::-webkit-focus-ring {
   outline: none;
