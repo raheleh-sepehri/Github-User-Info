@@ -44,7 +44,7 @@ const index = ({ userData, isOpen, repos, setIsOpen }: PropsType) => {
                   leaveFrom="opacity-200 scale-100"
                   leaveTo="opacity-0 scale-95"
                 >
-                  <Dialog.Panel className="relative flex flex-col gap-5 transition-all w-full p-6 max-w-lg max-h-[90vh] rounded-2xl transform bg-white overflow-y-auto text-left shadow-xl ">
+                  <Dialog.Panel className="panel__styles">
                     <button
                       className="absolute top-2 right-2 rounded-full z-10 bg-white p-1"
                       type="button"
